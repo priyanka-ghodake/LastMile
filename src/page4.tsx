@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity ,BackHandler} from 'react-native'
-export default class Page4 extends Component (){
+export default class Page4 extends Component{
     componentDidMount() {
         BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
     }
@@ -13,15 +13,20 @@ export default class Page4 extends Component (){
         const { navigation } = this.props
         navigation.navigate('Page1')
         return true;
-    }
+    };
+    // onBackPress = () => {
+    //     const { navigation } = this.props
+    //     navigation.navigate('Screen 1')
+    //     return true;
+    //   }; 
     render() {
-  const { navigation } = props
+  const { navigation } = this.props
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Second Screen</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Page3')}>
+        onPress={() => navigation.navigate('Page1')}>
         <Text style={styles.buttonText}>Go to 1st Screen</Text>
         
       </TouchableOpacity>
