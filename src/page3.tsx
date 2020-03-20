@@ -5,11 +5,11 @@ function Page3(props) {
   const { navigation } = props
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Second Screen</Text>
+      <Text style={styles.text}>Third Screen</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Page4')}>
-        <Text style={styles.buttonText}>Go to next Screen</Text>
+        <Text style={styles.buttonText}>Go to 4th Screen</Text>
         
       </TouchableOpacity>
 
@@ -17,7 +17,7 @@ function Page3(props) {
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Page4')}>
-      <Text style={styles.buttonText1} onPress={()=>navigation.goBack()}>Go to back Screen</Text>
+      <Text style={styles.buttonText} onPress={()=>navigation.goBack()}>Go to back Screen</Text>
         
       </TouchableOpacity>
      
@@ -27,11 +27,7 @@ function Page3(props) {
 }
 
 const styles = StyleSheet.create({
-    buttonText1:{
-        fontSize: 20,
-    color: 'red',
-    marginTop:50
-    },
+   
   container: {
     flex: 1,
     justifyContent: 'center',

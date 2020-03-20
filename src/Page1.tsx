@@ -5,11 +5,11 @@ function Home(props) {
   const { navigation } = props
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Home Screen</Text>
+      <Text style={styles.text}>First Screen</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Page2')}>
-        <Text style={styles.buttonText}>Go to Detail Screen</Text>
+        <Text style={styles.buttonText}>Go to 2nd Screen</Text>
       </TouchableOpacity>
     </View>
   )

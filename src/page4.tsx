@@ -1,41 +1,55 @@
 import React,{Component} from 'react'
 import { StyleSheet, View, Text, TouchableOpacity ,BackHandler} from 'react-native'
-export default class Page4 extends Component{
-    componentDidMount() {
-        BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
-    }
-    
-    componentWillUnmount(){
-        BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
-    }
-    
-    handleBackPress = () => {
-        const { navigation } = this.props
+// export default class Page4 extends Component(props:any){
+  import { useFocusEffect } from '@react-navigation/native';
+
+
+
+  function Page4(props:any) {
+
+  useFocusEffect(
+    React.useCallback(() => {
+      const handleBackPress = () => {
+        const { navigation } = props;
         navigation.navigate('Page1')
-        return true;
-    };
-    // onBackPress = () => {
+        return true
+      };
+
+      BackHandler.addEventListener('hardwareBackPress', handleBackPress);
+
+      return () =>
+        BackHandler.removeEventListener('hardwareBackPress', handleBackPress);
+    }, [])
+  );
+
+
+
+    // componentDidMount() {
+    //     BackHandler.addEventListener('hardwareBackPress', this.handleBackPress);
+    // }
+    
+    // componentWillUnmount(){
+    //     BackHandler.removeEventListener('hardwareBackPress', this.handleBackPress);
+    // }
+    
+    // handleBackPress = () => {
     //     const { navigation } = this.props
-    //     navigation.navigate('Screen 1')
+    //     navigation.navigate('Page1')
     //     return true;
-    //   }; 
-    render() {
-  const { navigation } = this.props
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Second Screen</Text>
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Page1')}>
-        <Text style={styles.buttonText}>Go to 1st Screen</Text>
-        
-      </TouchableOpacity>
-      {/* <TouchableOpacity style={styles.buttonText1}>
-      <Text style={styles.buttonText1} onPress={()=>navigation.goBack()}>Go to 1st Screen</Text>
-      </TouchableOpacity> */}
-    </View>
-  )
-    }
+    // };
+  
+
+
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Fourth Screen</Text>
+      
+      </View>
+    )
+
+
+   
 }
 
 const styles = StyleSheet.create({
@@ -67,4 +81,4 @@ const styles = StyleSheet.create({
   }
 })
 
-// export default Page4
+export default Page4

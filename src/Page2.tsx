@@ -9,14 +9,14 @@ function Page2(props) {
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => navigation.navigate('Page3')}>
-        <Text style={styles.buttonText}>Go to next Screen</Text>
+        <Text style={styles.buttonText}>Go to 3rd Screen</Text>
         
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={()=>navigation.goBack()}>
-      <Text style={styles.buttonText1} >Go to back Screen</Text>
+      <Text style={styles.buttonText} >Go to back Screen</Text>
         
       </TouchableOpacity>
 
